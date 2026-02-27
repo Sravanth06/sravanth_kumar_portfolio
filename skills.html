@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    /* Lock the body to prevent jumping */
+    body {
+      overflow: hidden !important;
+      height: 100vh !important;
+      margin: 0;
+    }
+
+    /* Reuse the glassmorphism container style */
+    .skills-container {
+      width: 90%;
+      height: 90vh;
+      max-height: 90vh;
+      background-color: #4ad0ee1b;
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      box-shadow: 5px 5px 20px 1px #4acfee;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 40px;
+      margin: auto;
+      overflow: hidden; 
+    }
+
+    /* Header & Navigation */
+    .skills-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #4acfee;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .skills-header h1 {
+      color: white;
+      font-size: 40px;
+    }
+
+    /* Scrollable grid area */
+    .skills-scroll-area {
+      overflow-y: auto;
+      padding-right: 15px;
+      flex-grow: 1; 
+      height: 0; 
+    }
+
+    /* Customizing the scrollbar */
+    .skills-scroll-area::-webkit-scrollbar { width: 8px; }
+    .skills-scroll-area::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+    .skills-scroll-area::-webkit-scrollbar-thumb { background: #4acfee; border-radius: 10px; }
+
+    /* The Grid Layout */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      padding-bottom: 30px;
+    }
+
+    /* Individual Skill Category Cards */
+    .skill-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(74, 207, 238, 0.3);
+      border-radius: 15px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      border-color: #4acfee;
+      box-shadow: 0 0 15px rgba(74, 207, 238, 0.2);
+    }
+
+    .skill-card h2 {
+      color: #4acfee;
+      font-size: 22px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-card h2 i {
+      font-size: 28px;
+    }
+
+    /* Skill Tags (The Pills) */
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: rgba(74, 207, 238, 0.1);
+      color: white;
+      border: 1px solid #4acfee;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      background: #4acfee;
+      color: #0e1217;
+      box-shadow: 0 0 10px #4acfee;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .skills-container { padding: 20px; height: 95vh; max-height: 95vh; }
+      .skills-header { flex-direction: column; gap: 15px; text-align: center; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted plays-inline class="back-vid">
+    <source src="images/galaxy.mp4" type="video/mp4">
+  </video>
+
+  <section class="skills-container">
+    
+    <div class="skills-header">
+      <h1>Technical <span style="color: #4acfee;">Skills</span></h1>
+      <a href="index.html" class="btn" style="padding: 10px 20px; font-size: 14px;">Back to Home</a>
+    </div>
+
+    <div class="skills-scroll-area">
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h2><i class='bx bx-code-alt'></i> Languages</h2>
+          <div class="tags-container">
+            <span class="skill-tag">Java (OOP)</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h2><i class='bx bxs-data'></i> Database & DBMS</h2>
+          <div class="tags-container">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Database Normalization</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h2><i class='bx bxl-python'></i> Python Ecosystem</h2>
+          <div class="tags-container">
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pygame</span>
+            <span class="skill-tag">CustomTkinter</span>
+            <span class="skill-tag">Pandas</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h2><i class='bx bx-window-alt'></i> Web & Frameworks</h2>
+          <div class="tags-container">
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">RESTful APIs</span>
+            <span class="skill-tag">Frontend Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h2><i class='bx bx-brain'></i> AI & Fundamentals</h2>
+          <div class="tags-container">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Object-Oriented Design</span>
+            <span class="skill-tag">Digital Electronics</span>
+            <span class="skill-tag">Statistics</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h2><i class='bx bx-wrench'></i> Developer Tools</h2>
+          <div class="tags-container">
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Vercel Deployment</span>
+            <span class="skill-tag">Linux Command Line</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
